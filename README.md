@@ -2,6 +2,8 @@
 For study
 Line
 new line
+
+new line in PyCharm
 # Local .terraform directories
 
 
