@@ -1,6 +1,7 @@
 # devops-netology
 For study
 Line
+new line
 # Local .terraform directories
 
 
