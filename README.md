@@ -20,7 +20,9 @@ end
     sudo cp /bin/bash /gambrilus/
     PATH=/gambrilus:$PATH
 10  Команда at используется для назначения одноразового задания на заданное время, а команда batch — для назначения одноразовых задач, которые должны выполняться, когда загрузка системы становится меньше 0,8
+
 11  Вернется в нашем случае 0, что при этом будет являться Истиной
+
 12  sudo mkdir /bin/gambrilus
     sudo cp /bin/bash /bin/gambrilus/
     PATH=/bin/gambrilus:$PATH
