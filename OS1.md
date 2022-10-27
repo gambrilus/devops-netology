@@ -1,2 +1,2 @@
-chdir("/tmp") 
-/etc/magic
+1   chdir("/tmp")
+2   /etc/magic
