@@ -1,1 +1,2 @@
-
+chdir("/tmp") 
+/etc/magic
