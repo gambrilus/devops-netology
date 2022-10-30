@@ -3,6 +3,7 @@
 2   /usr/share/misc/magic.mgc
 
 3   Перезаписать данный файл с помощью echo ''> путь к файлу
+    
     Например у нас удален файл logs.txt
     echo '' > logs.txt
 
