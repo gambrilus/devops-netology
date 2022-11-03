@@ -41,4 +41,9 @@ node_network_speed_bytes{device="ens160"}
 node_network_receive_bytes_total{device="ens160"}
 node_network_transmit_bytes_total{device="ens160"} 
 
-3
+3 ![изображение](https://user-images.githubusercontent.com/100866321/199820747-f74604fa-cd62-4fb3-b522-caa22bc18f61.png)
+
+4  Да, судя по всему понимает что это виртуальная машина
+[    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[    0.000000] Hypervisor detected: KVM
+
