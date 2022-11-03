@@ -23,9 +23,11 @@ CPU:
 node_cpu_seconds_total
 node_pressure_cpu_waiting_seconds_total
 node_schedstat_running_seconds_total
+
 Memory:
 node_memory_MemAvailable_bytes
 node_memory_MemFree_bytes
+
 Disk:
 node_disk_io_time_seconds_total{device="sda"}
 node_disk_io_time_weighted_seconds_total{device="sda"} 
@@ -33,6 +35,7 @@ node_disk_read_bytes_total{device="sda"}
 node_disk_read_time_seconds_total{device="sda"} 
 node_disk_write_time_seconds_total{device="sda"}
 node_disk_writes_completed_total{device="sda"}
+
 Network:
 node_network_speed_bytes{device="ens160"}
 node_network_receive_bytes_total{device="ens160"}
