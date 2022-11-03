@@ -1,4 +1,5 @@
-1.  В директории /usr/lib/systemd/system/ создаем файл node_exporter.service
+1  В директории /usr/lib/systemd/system/ создаем файл node_exporter.service
+
 В нем прописываем:
 [Unit]
 Description=Node_exporter
@@ -16,7 +17,8 @@ WantedBy=multi-user.target
 sudo systemctl start node_exporter.service
 sudo systemctl enable node_exporter.service
 
-2.   Метрики для
+2   Метрики для
+
 CPU:
 node_cpu_seconds_total
 node_pressure_cpu_waiting_seconds_total
@@ -36,4 +38,4 @@ node_network_speed_bytes{device="ens160"}
 node_network_receive_bytes_total{device="ens160"}
 node_network_transmit_bytes_total{device="ens160"} 
 
-3.
+3
