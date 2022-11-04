@@ -47,3 +47,18 @@ node_network_transmit_bytes_total{device="ens160"}
 [    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
 [    0.000000] Hypervisor detected: KVM
 
+5   This denotes the maximum number of file-handles a process can allocate. Default value is 1048576
+    Его достичь не даст ulimit -n (лимит количества открытых файловых дескрипторов)
+    
+6   ![изображение](https://user-images.githubusercontent.com/100866321/200040096-908e836b-4991-4d99-8647-062ed1e2a4bc.png)
+
+7   Нагуглилось такое:
+:(){ :|:& };:
+для понятности заменим : именем f и отформатируем код.
+f() {
+  f | f &
+}
+f
+таким образом это функция, которая параллельно пускает два своих экземпляра. Каждый пускает ещё по два и т.д. 
+При отсутствии лимита на число процессов машина быстро исчерпывает физическую память и уходит в своп.
+ulimit 
