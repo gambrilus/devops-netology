@@ -6,12 +6,14 @@ Description=Node_exporter
 
 [Service]
 EnviromentFile=/etc/node_exporter/node_env
-ExecStart=/usr/bin/node_exporter/node_exporter
+ExecStart=/usr/bin/node_exporter/node_exporter $OPTIONS
 
 
 [Install]
 WantedBy=multi-user.target
 
+UPD.
+В файл /etc/node_exporter/node_env добавляем значения переменной $OPTIONS, например $OPTIONS="--collector.cgroups". Теперь при старте служба будет включать данный коллектор, который по умолчанию выключен.
 Добавляем стартуем юнит и добавляем его в автозагрузку
 
 sudo systemctl start node_exporter.service
@@ -63,3 +65,7 @@ f
 При отсутствии лимита на число процессов машина быстро исчерпывает физическую память и уходит в своп.
 
 ulimit -u может решить эту проблему
+
+UPD.
+cgroup: fork rejected by pids controller in /user.slice/user-1000.slice/session-4.scope
+Процесс останавливается при достижении лимита.
