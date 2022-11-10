@@ -8,4 +8,49 @@
     Жмем просто Enter
     w
 5   sfdisk -d /dev/sdb | sfdisk /dev/sdc
-6   
+6   sudo mdadm --create --verbose /dev/md1 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1
+7   sudo mdadm --create --verbose /dev/md2 --level=0 --raid-devices=2 /dev/sdb2 /dev/sdc2
+8   sudo pvcreate /dev/md1
+    sudo pvcreate /dev/md2
+9   sudo vgcreate VolG /dev/md1 /dev/md2
+10  sudo lvcreate -L 100M -n LV100 /dev/v
+11  sudo mkfs.ext4 /dev/VolG/LV100
+12  sudo mount /dev/VolG/LV100 /tmp/new
+14   lsblk
+NAME                      MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+loop0                       7:0    0 63.2M  1 loop  /snap/core20/1634
+loop1                       7:1    0 63.2M  1 loop  /snap/core20/1695
+loop2                       7:2    0 67.2M  1 loop  /snap/lxd/21835
+loop3                       7:3    0 67.8M  1 loop  /snap/lxd/22753
+loop4                       7:4    0 43.6M  1 loop  /snap/snapd/14978
+loop5                       7:5    0   48M  1 loop  /snap/snapd/17336
+sda                         8:0    0   64G  0 disk
+├─sda1                      8:1    0    1M  0 part
+├─sda2                      8:2    0  1.5G  0 part  /boot
+└─sda3                      8:3    0 62.5G  0 part
+  └─ubuntu--vg-ubuntu--lv 253:0    0 31.3G  0 lvm   /
+sdb                         8:16   0  2.5G  0 disk
+├─sdb1                      8:17   0    2G  0 part
+│ └─md1                     9:1    0    2G  0 raid1
+└─sdb2                      8:18   0  512M  0 part
+  └─md2                     9:2    0 1019M  0 raid0
+    └─VolG-LV100          253:1    0  100M  0 lvm   /tmp/new
+sdc                         8:32   0  2.5G  0 disk
+├─sdc1                      8:33   0    2G  0 part
+│ └─md1                     9:1    0    2G  0 raid1
+└─sdc2                      8:34   0  512M  0 part
+  └─md2                     9:2    0 1019M  0 raid0
+    └─VolG-LV100          253:1    0  100M  0 lvm   /tmp/new
+15  echo $?
+0
+16  sudo pvmove /dev/md2 /dev/md1
+17  sudo mdadm /dev/md1 --fail /dev/sdb1
+18  dmesg
+[ 2577.785231] md/raid1:md1: Disk failure on sdb1, disabling device.
+               md/raid1:md1: Operation continuing on 1 devices.
+19  echo $?
+0
+
+
+
+
