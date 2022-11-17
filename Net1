@@ -3,4 +3,15 @@
 2. 200
 OK
 
-3. 
+3. 85.174.200.153
+4. OJSC Rostelecom Macroregional Branch South
+AS12389
+5. traceroute 8.8.8.8
+traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
+ 1  _gateway (10.0.2.2)  0.614 ms  0.470 ms  0.509 ms
+ 2  _gateway (10.0.2.2)  1.517 ms  1.409 ms  1.315 ms
+6. Наибольшая задержка на участке ожидания ответа от dns.google.com
+7. dns.google.com.         287     IN      A       8.8.4.4
+dns.google.com.         287     IN      A       8.8.8.8
+8. 4.4.8.8.in-addr.arpa.   45357   IN      PTR     dns.google.
+8.8.8.8.in-addr.arpa.   6885    IN      PTR     dns.google.
