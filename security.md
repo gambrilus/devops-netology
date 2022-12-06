@@ -3,6 +3,7 @@
 5     ssh-keygen
 ssh-copy-id gambrilus@192.168.253.8
 ssh gambrilus@192.168.253.8
+
 6     ![изображение](https://user-images.githubusercontent.com/100866321/205865299-2f661bc7-4d22-46b3-ba48-11bc83d10b68.png)
 7
 
