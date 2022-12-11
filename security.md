@@ -1,6 +1,6 @@
 1     ![изображение](https://user-images.githubusercontent.com/100866321/206912974-91ab7cb3-8cc6-494b-9ffe-a27704010e64.png)
 
-2     ![изображение](https://user-images.githubusercontent.com/100866321/206912935-fd469b12-77d9-47b7-943d-03e8b774fed6.png)
+2     ![изображение](https://user-images.githubusercontent.com/100866321/206913006-945de52b-e4b9-4027-a5df-3f7d0984c7da.png)
 
 3     ![изображение](https://user-images.githubusercontent.com/100866321/205827479-33a65c86-50a0-439c-ba2c-d86a43770278.png)
 4     ![изображение](https://user-images.githubusercontent.com/100866321/206196346-b2cc809f-7bdb-4141-9975-57f05c3613ac.png)
