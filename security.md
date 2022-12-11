@@ -1,3 +1,5 @@
+1
+2
 3     ![изображение](https://user-images.githubusercontent.com/100866321/205827479-33a65c86-50a0-439c-ba2c-d86a43770278.png)
 4     ![изображение](https://user-images.githubusercontent.com/100866321/206196346-b2cc809f-7bdb-4141-9975-57f05c3613ac.png)
 5     ssh-keygen
