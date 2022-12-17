@@ -51,16 +51,16 @@ done
 
 В while вроде как не хватает закрывающей скобки
 
-#!/usr/bin/env bash
-while ((1==1))
-do
-	curl https://localhost:4757
-	if (($? != 0))
-	then
-		date >> curl.log
-	else
-		exit
-	fi
+#!/usr/bin/env bash \
+while ((1==1)) \
+do \
+	curl https://localhost:4757 \
+	if (($? != 0)) \
+	then \
+		date >> curl.log \
+	else \
+		exit \
+	fi \
 done
 
 
@@ -68,15 +68,15 @@ done
 
 Необходимо написать скрипт, который проверяет доступность трёх IP: 192.168.0.1, 173.194.222.113, 87.250.250.242 по 80 порту и записывает результат в файл log. Проверять доступность необходимо пять раз для каждого узла.
 Ваш скрипт:
-#!/usr/bin/env bash
-hosts=(192.168.0.1 173.194.222.113 87.250.250.242)
-for i in {1..5}
-do
-	for $host in ${hosts[@]}
-	do
-		curl ${host}:80
-		$? >> log
-	done
+#!/usr/bin/env bash \
+hosts=(192.168.0.1 173.194.222.113 87.250.250.242) \
+for i in {1..5} \
+do \
+ 	for $host in ${hosts[@]} \
+	do \
+		curl ${host}:80 \
+		$? >> log \
+	done \
 done
 
 Задание 4
@@ -84,21 +84,21 @@ done
 Необходимо дописать скрипт из предыдущего задания так, чтобы он выполнялся до тех пор, пока один из узлов не окажется недоступным. Если любой из узлов недоступен - IP этого узла пишется в файл error, скрипт прерывается.
 Ваш скрипт:
 
-#!/usr/bin/env bash
-hosts=(192.168.0.1 173.194.222.113 87.250.250.242)
-for i in {1..5}
-do
-	for $host in ${hosts[@]}
-	do
-		curl ${host}:80
-		if (($? != 0)) 
-		then
-			${host} >> error
-			exit
-		else
-			$? >> log
-		fi
-	done
+#!/usr/bin/env bash \
+hosts=(192.168.0.1 173.194.222.113 87.250.250.242) \
+for i in {1..5} \
+do \
+	for $host in ${hosts[@]} \
+	do \
+		curl ${host}:80 \
+		if (($? != 0)) \
+		then \
+			${host} >> error \
+			exit \
+		else \
+			$? >> log \
+		fi \
+	done \
 done
 
 Дополнительное задание (со звездочкой*) - необязательно к выполнению
@@ -106,17 +106,17 @@ done
 Мы хотим, чтобы у нас были красивые сообщения для коммитов в репозиторий. Для этого нужно написать локальный хук для git, который будет проверять, что сообщение в коммите содержит код текущего задания в квадратных скобках и количество символов в сообщении не превышает 30. Пример сообщения: [04-script-01-bash] сломал хук.
 Ваш скрипт:
 
-#!/usr/bin/env bash
+#!/usr/bin/env bash \
 
-# regex to validate in commit msg
-commit_regex='([[04-script-01-bash]])'
-error_msg="Aborting commit. Your commit message is wrong. Must start with [04-script-01-bash]"
+# regex to validate in commit msg \
+commit_regex='([[04-script-01-bash]])' \
+error_msg="Aborting commit. Your commit message is wrong. Must start with [04-script-01-bash]" \
 
-if [[! grep -iqE "$commit_regex" "$1"]] && [[${#$1} <= 30]]
-then
-    echo "$error_msg" >&2
-    exit 1
-fi
+if [[! grep -iqE "$commit_regex" "$1"]] && [[${#$1} <= 30]] \
+then \
+    echo "$error_msg" >&2 \
+    exit 1 \
+fi 
 
 Правила приема домашнего задания
 
