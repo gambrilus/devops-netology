@@ -72,7 +72,7 @@ done
 hosts=(192.168.0.1 173.194.222.113 87.250.250.242) \
 for i in {1..5} \
 do \
- 	for $host in ${hosts[@]} \
+ 	for ${host} in ${hosts[@]} \
 	do \
 		curl ${host}:80 \
 		$? >> log \
@@ -88,7 +88,7 @@ done
 hosts=(192.168.0.1 173.194.222.113 87.250.250.242) \
 for i in {1..5} \
 do \
-	for $host in ${hosts[@]} \
+	for ${host} in ${hosts[@]} \
 	do \
 		curl ${host}:80 \
 		if (($? != 0)) \
