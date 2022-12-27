@@ -69,8 +69,9 @@ for result in result_os.split('\n'):
 Внес изменения в файл bash.md
 
 ```bash
-python3 scriptpy.py
+gambrilus@ubuntu  ~/devops-netology/devops-netology   main ✚  python3 scriptpy.py
 bash.md
+
 ```
 
 Задание 3
