@@ -66,8 +66,12 @@ for result in result_os.split('\n'):
 ```
 
 Вывод скрипта при запуске при тестировании:
+Внес изменения в файл bash.md
 
-???
+```bash
+python3 scriptpy.py
+bash.md
+```
 
 Задание 3
 
