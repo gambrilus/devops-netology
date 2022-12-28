@@ -65,12 +65,29 @@ bash.md
 
 Доработать скрипт выше так, чтобы он не только мог проверять локальный репозиторий в текущей директории, но и умел воспринимать путь к репозиторию, который мы передаём как входной параметр. Мы точно знаем, что начальство коварное и будет проверять работу этого скрипта в директориях, которые не являются локальными репозиториями.
 Ваш скрипт:
+```python3
+#!/usr/bin/env python3
 
-???
+import os
+import sys
+
+bash_command = ["cd " + sys.argv[1], "git status"]
+result_os = os.popen(' && '.join(bash_command)).read()
+for result in result_os.split('\n'):
+    if result.find('modified') != -1:
+        prepare_result = result.replace('\tmodified:   ', '')
+        print(prepare_result)
+```
 
 Вывод скрипта при запуске при тестировании:
 
-???
+```bash
+gambrilus@ubuntu  ~/devops-netology/devops-netology   main ±✚  python3 scriptpy.py ~/devops-netology/devops-netology
+bash.md
+scriptpy.py
+gambrilus@ubuntu  ~/devops-netology/devops-netology   main ±✚  python3 scriptpy.py ~/devops-netology/
+fatal: not a git repository (or any of the parent directories): .git
+```
 
 Задание 4
 
