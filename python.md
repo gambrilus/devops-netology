@@ -86,10 +86,32 @@ bash.md
 
 Также, должна быть реализована возможность проверки текущего IP сервиса c его IP из предыдущей проверки. Если проверка будет провалена - оповестить об этом в стандартный вывод сообщением: [ERROR] <URL сервиса> IP mismatch: <старый IP> <Новый IP>. Будем считать, что наша разработка реализовала сервисы: drive.google.com, mail.google.com, google.com.
 Ваш скрипт:
+```python
+#!/usr/bin/env python3
+import socket
+import time
 
-???
+dnsnames = ['drive.google.com', 'mail.google.com', 'google.com', 'yandex.ru']
+i = 0
+hostIP = {}
+for host in dnsnames:
+  hostIP[host] = socket.gethostbyname(host)
+print(hostIP)
+
+while i in range(120):
+  for host in dnsnames:
+    if hostIP[host] != socket.gethostbyname(host):
+      print('[ERROR] ' + host + ' IP mismatch: ' + hostIP[host] + ' ' + socket.gethostbyname(host))
+      hostIP[host] = socket.gethostbyname(host)
+  i += 1
+  time.sleep(0.5)
+```
 
 Вывод скрипта при запуске при тестировании:
 
-???
+```
+gambrilus@ubuntu  ~/devops-netology/devops-netology   main ✚  python3 ipscript.py
+{'drive.google.com': '142.251.1.194', 'mail.google.com': '216.58.209.197', 'google.com': '216.58.209.174', 'yandex.ru': '5.255.255.70'}
+[ERROR] google.com IP mismatch: 216.58.209.174 216.58.209.206
+```
 
