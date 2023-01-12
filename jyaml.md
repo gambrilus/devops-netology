@@ -56,20 +56,71 @@
 
 В прошлый рабочий день мы создавали скрипт, позволяющий опрашивать веб-сервисы и получать их IP. К уже реализованному функционалу нам нужно добавить возможность записи JSON и YAML файлов, описывающих наши сервисы. Формат записи JSON по одному сервису: { "имя сервиса" : "его IP"}. Формат записи YAML по одному сервису: - имя сервиса: его IP. Если в момент исполнения скрипта меняется IP у сервиса - он должен так же поменяться в yml и json файле.
 Ваш скрипт:
-```
-???
+```python
+#!/usr/bin/env python3
+
+import socket
+import time
+import yaml
+import json
+
+#Fill files
+dnsnames = ['drive.google.com', 'mail.google.com', 'google.com', 'yandex.ru']
+i = 0
+hostIP = {}
+for host in dnsnames:
+  hostIP[host] = socket.gethostbyname(host)
+print(hostIP)
+with open ('hostsIP.json', 'w') as js:
+  js.write(json.dumps(hostIP, indent=2))
+with open ('hostsIP.yaml', 'w') as ym:
+  ym.write(yaml.dump(hostIP))
+
+
+#Check changes & rewrite files
+while i in range(30):
+  for host in dnsnames:
+    if hostIP[host] != socket.gethostbyname(host):
+      print('[ERROR] ' + host + ' IP mismatch: ' + hostIP[host] + ' ' + socket.gethostbyname(host))
+      hostIP[host] = socket.gethostbyname(host)
+      with open ('hostsIP.json', 'w') as js:
+        js.write(json.dumps(hostIP, indent=2))
+      with open ('hostsIP.yaml', 'w') as ym:
+        ym.write(yaml.dump(hostIP))
+  i += 1
+  time.sleep(0.5)
 ```
 Вывод скрипта при запуске при тестировании:
 ```
-???
+python3 ipscript.py
+{'drive.google.com': '64.233.165.194', 'mail.google.com': '108.177.14.19', 'google.com': '216.58.209.174', 'yandex.ru': '5.255.255.50'}
+[ERROR] yandex.ru IP mismatch: 5.255.255.50 5.255.255.55
+[ERROR] yandex.ru IP mismatch: 5.255.255.55 77.88.55.66
+[ERROR] yandex.ru IP mismatch: 5.255.255.55 77.88.55.66
+[ERROR] drive.google.com IP mismatch: 64.233.165.194 64.233.164.194
+[ERROR] mail.google.com IP mismatch: 108.177.14.19 108.177.14.17
+[ERROR] mail.google.com IP mismatch: 108.177.14.18 209.85.233.19
 ```
 json-файл(ы), который(е) записал ваш скрипт:
 ```
-???
+cat hostsIP.json
+
+{
+  "drive.google.com": "64.233.164.194",
+  "mail.google.com": "209.85.233.19",
+  "google.com": "216.58.209.174",
+  "yandex.ru": "77.88.55.66"
+}                                                                                                                                                                                                                                                                                     
 ```
 yml-файл(ы), который(е) записал ваш скрипт:
 ```
-???
+cat hostsIP.yaml
+
+drive.google.com: 64.233.164.194
+google.com: 216.58.209.174
+mail.google.com: 209.85.233.19
+yandex.ru: 77.88.55.66
+
 ```
 
 Правила приема домашнего задания
