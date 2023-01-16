@@ -25,7 +25,7 @@
             { "name" : "first",
             "type" : "server",
             "ip" : 7175 
-            }
+            },
             { "name" : "second",
             "type" : "proxy",
             "ip : 71.78.22.43
@@ -37,7 +37,7 @@
 
 Ваш скрипт:
 
-Не хватает кавычек в строках с IP 
+Не хватает кавычек в строках с IP и щапятой после первого списка
 ```
     { "info" : "Sample JSON output from our service\t",
         "elements" :[
