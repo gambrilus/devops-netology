@@ -1,4 +1,4 @@
-1.  
+1.  https://hub.docker.com/layers/gambrilus/netology/nginx/images/sha256-b48731c42bdb49eceff7d492eae3a48ab3f1be5e2eba377aa1cd07116fbb8fc0?context=repo
 2.  Высоконагруженное монолитное java веб-приложение - из-за необходимости получать максимум ресурсов для работы приложения - физический сервер
 
     Nodejs веб-приложение - для Nodejs удобно использовать контейнеризацию
