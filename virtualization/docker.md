@@ -14,5 +14,27 @@
     
     Gitlab сервер для реализации CI/CD процессов и приватный (закрытый) Docker Registry - обычно для реализации CI\СD процессов используют виртуальный сервер, а так же для храненения образов Docker удобней использовать виртуальный сервер.
     
-3.
+3. 
+docker run --name centos -v /data:/data -d -it centos
+
+docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+40cb57e1c146   centos    "/bin/bash"   5 seconds ago   Up 4 seconds             centos
+
+docker run --name debian -v /data:/data -d -it debian
+
+docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED              STATUS              PORTS     NAMES
+1eda28fc0219   debian    "bash"        About a minute ago   Up About a minute             debian
+40cb57e1c146   centos    "/bin/bash"   About a minute ago   Up About a minute             centos
+
+docker exec -d centos touch /data/file.txt
+
+sudo touch /data/hostfile.txt
+
+docker exec debian ls -a /data
+.
+..
+file.txt
+hostfile.txt
 
