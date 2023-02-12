@@ -162,5 +162,6 @@ e0326212a9ac   prom/prometheus:v2.17.1            "/bin/prometheus --c…"   4 m
 154a64c252c6   prom/pushgateway:v1.2.0            "/bin/pushgateway"       4 minutes ago   Up 3 minutes                   9091/tcp   pushgateway
 f36867059d21   stefanprodan/caddy                 "/sbin/tini -- caddy…"   4 minutes ago   Restarting (2) 8 seconds ago              caddy
 f3982fa12279   prom/alertmanager:v0.20.0          "/bin/alertmanager -…"   4 minutes ago   Up 3 minutes                   9093/tcp   alertmanager
-```bash
+```
 
+4. Из-за ошибки в Caddy невозможно выполнить задание
