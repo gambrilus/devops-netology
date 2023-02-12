@@ -1,4 +1,5 @@
-1. ![изображение](https://user-images.githubusercontent.com/100866321/218264443-276fd64a-492f-4888-aec9-8559e03446a7.png)
+1. ![изображение](https://user-images.githubusercontent.com/100866321/218335913-64fb0170-d7b0-48b8-9d93-bffedbc14d42.png)
+
 2. 
 ``` bash
 terraform apply
