@@ -17,6 +17,19 @@ Terraform will perform the following actions:
       + fqdn                      = (known after apply)
       + hostname                  = "node01.netology.cloud"
       + id                        = (known after apply)
+      + metadata                  = {
+          + "user-data" = <<-EOT
+                #cloud-config
+                users:
+                  - name: gambrilus
+                    groups: sudo
+                    shell: /bin/bash
+                    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+                    ssh_authorized_keys:
+                      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCg93e4uKuoRNiHl5H6XoM01nGt52cBlbvgRXMkf2XDbZzElSybsWC7+p3eO1tbd1r/IzwooLhaPadZboTEJ4jwnEd5lqoX/WWW5+y9O5vlxKCXEhEfR0fs5OHnrk7nafzZT/bRDHAicHC8Q+XF+cRbgNFTw095mBUChyLLEqZvcSTwAePHroWlDFL6auj7Ywz7oL1VuUC5MO37HqL0KuJwqTNDIqsR7fCnNq5N89yKgHMBkOICDjuiA3YvnqQBjE9J2qd/S1mKpRRscHvGFctdfGr2ypbkW0F0geR3kh5voY6000sMSDtaoRqnkcRAlPlKRozQMbK7SnY+bfQuUrXp gambrilus@DESKTOP-7C8AGBU
+
+            EOT
+        }
       + name                      = "node01"
       + network_acceleration_type = "standard"
       + platform_id               = "standard-v1"
@@ -33,7 +46,7 @@ Terraform will perform the following actions:
           + initialize_params {
               + block_size  = (known after apply)
               + description = (known after apply)
-              + image_id    = "fd8s746la2g43rauocgs"
+              + image_id    = "fd823j04gp6q1hjie6un"
               + name        = "root-node01"
               + size        = 50
               + snapshot_id = (known after apply)
@@ -117,25 +130,27 @@ Do you want to perform these actions?
   Enter a value: yes
 
 yandex_vpc_network.default: Creating...
-yandex_vpc_network.default: Creation complete after 1s [id=enpebbt0ficnfanf4rr6]
+yandex_vpc_network.default: Creation complete after 1s [id=enpe0iut6djjql2j0kaa]
 yandex_vpc_subnet.default: Creating...
-yandex_vpc_subnet.default: Creation complete after 0s [id=e2llr74tjdelh2047p91]
+yandex_vpc_subnet.default: Creation complete after 1s [id=e2l7c8jpvndl90ssljam]
 yandex_compute_instance.node01: Creating...
 yandex_compute_instance.node01: Still creating... [10s elapsed]
 yandex_compute_instance.node01: Still creating... [20s elapsed]
 yandex_compute_instance.node01: Still creating... [30s elapsed]
 yandex_compute_instance.node01: Still creating... [40s elapsed]
 yandex_compute_instance.node01: Still creating... [50s elapsed]
-yandex_compute_instance.node01: Creation complete after 57s [id=epdokilmp9a3b4459jub]
+yandex_compute_instance.node01: Creation complete after 51s [id=epd70qkh3b3lefuhes7f]
 
 Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-external_ip_address_node01_yandex_cloud = "158.160.19.119"
-internal_ip_address_node01_yandex_cloud = "192.168.101.25"
+external_ip_address_node01_yandex_cloud = "51.250.28.233"
+internal_ip_address_node01_yandex_cloud = "192.168.101.23"
+
 ```
-![изображение](https://user-images.githubusercontent.com/100866321/218266614-de5497b6-808d-4770-b4a3-1e5b80fff45d.png)
+![изображение](https://user-images.githubusercontent.com/100866321/218336277-3673410a-7466-4eb4-839d-644f70d0a966.png)
+
 
 3. Все контейнеры поднялись кроме Caddy который валится с ошибкой 
 ```
