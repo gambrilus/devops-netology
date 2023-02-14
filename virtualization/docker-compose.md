@@ -166,4 +166,5 @@ f68ff349b78c   prom/alertmanager:v0.20.0          "/bin/alertmanager -…"   37 
 
 ```
 
-4. ![изображение](https://user-images.githubusercontent.com/100866321/218339775-12c38ec2-c768-4b9b-b67b-05311305b158.png)
+4. 
+![изображение](https://user-images.githubusercontent.com/100866321/218339775-12c38ec2-c768-4b9b-b67b-05311305b158.png)
