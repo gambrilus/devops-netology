@@ -23,7 +23,16 @@
 
 Для получения зачета, вам необходимо предоставить скриншот из терминала (консоли), с выводом команды:
 ```
+
 docker node ls
+ID                            HOSTNAME             STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+kcp3yiutg5kxjejzastqze736 *   node01.netology.yc   Ready     Active         Leader           23.0.1
+vqm0l02ozo2dc0tkak75h7ky1     node02.netology.yc   Ready     Active         Reachable        23.0.1
+ko77e0zh7d6k93bo1nxe9xu19     node03.netology.yc   Ready     Active         Reachable        23.0.1
+riazzt0fp1ic6otp1tgp3o4gb     node04.netology.yc   Ready     Active                          23.0.1
+ftrooubayoyb1n90lrgii1da7     node05.netology.yc   Ready     Active                          23.0.1
+e2pt6gsosfvuvrwzws0wwboof     node06.netology.yc   Ready     Active                          23.0.1
+
 ```
 Задача 3
 
