@@ -52,9 +52,10 @@ test_database=# SELECT tablename, attname, avg_width FROM pg_stats WHERE avg_wid
  tablename | attname | avg_width 
 -----------+---------+-----------
  orders    | title   |        16
- ``
+```
 
 3. 
+
 ```
 BEGIN;
 ALTER TABLE orders RENAME TO orders_old;
