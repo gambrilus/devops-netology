@@ -28,8 +28,8 @@ SHOW GLOBAL STATUS LIKE 'Aborted_connects'. Он увеличивается на
 Это запускает процесс очистки памяти сервера Linux. что означает, что все доступные ресурсы оперативной памяти "съедены" PostgreSQL.
 Способы решения:
 - установить ограничение на объем доступной памяти для PostgreSQL
+
 Например просто ограничить целиком на весь сервер - ulimit -d <Предельный размер памяти>
-Или 
-  systemctl set-property postgresql.service MemoryLimit=256M
+Или systemctl set-property postgresql.service MemoryLimit=256M
 Или изменить shared_buffers в postgresql.conf
 - увеличить объем памяти на сервере
