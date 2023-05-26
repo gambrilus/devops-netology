@@ -31,7 +31,7 @@ SHOW GLOBAL STATUS LIKE 'Aborted_connects'. Он увеличивается на
 
 Например просто ограничить целиком на весь сервер - ulimit -d <Предельный размер памяти>
   
-Или systemctl set-property postgresql.service MemoryLimit=256M
+Или systemctl set-property postgresql.service MemoryLimit=<необходимое значение>
   
 Или изменить shared_buffers в postgresql.conf
 - увеличить объем памяти на сервере
