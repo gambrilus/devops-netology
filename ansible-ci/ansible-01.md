@@ -19,3 +19,7 @@ ok: [ubuntu] => {
 }
 ```
 9. 
+```
+ansible-doc -t connection -l
+```
+Нас, я так понимаю, интересует ssh плагин
