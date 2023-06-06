@@ -182,7 +182,7 @@ random_password.random_string: Destruction complete after 0s
 
 Destroy complete! Resources: 3 destroyed.
 ```
-![изображение](https://github.com/gambrilus/devops-netology/assets/100866321/0a3cd7c3-99d7-4dea-8928-c840000ebdee)
+
 
 Задание 2*
 Изучите в документации provider Virtualbox от shekeriev.
