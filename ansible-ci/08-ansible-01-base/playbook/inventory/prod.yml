@@ -10,5 +10,5 @@
   local:
     hosts:
       localhost:
-        ansible_connection: ssh
-        ansible_ssh_user: gambrilus
+        ansible_connection: local
+
