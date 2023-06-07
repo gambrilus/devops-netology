@@ -13,7 +13,7 @@
 В качестве решения приложите:
 
 скриншот ЛК Yandex Cloud с созданной ВМ,
-    ![Uploading изображение.png…]()
+    ![изображение](https://github.com/gambrilus/devops-netology/assets/100866321/ad03d0ab-81c9-4f0c-9089-e1cbeb188ec8)
 
 скриншот успешного подключения к консоли ВМ через ssh
     ![изображение](https://github.com/gambrilus/devops-netology/assets/100866321/9bb7b36c-da42-478a-8bf0-41befb51dff6)
