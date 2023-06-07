@@ -13,7 +13,8 @@
 В качестве решения приложите:
 
 скриншот ЛК Yandex Cloud с созданной ВМ,
-    
+    ![Uploading изображение.png…]()
+
 скриншот успешного подключения к консоли ВМ через ssh
     ![изображение](https://github.com/gambrilus/devops-netology/assets/100866321/9bb7b36c-da42-478a-8bf0-41befb51dff6)
    
@@ -32,6 +33,8 @@
 Создайте в корне проекта файл 'vms_platform.tf' . Перенесите в него все переменные первой ВМ.
 Скопируйте блок ресурса и создайте с его помощью вторую ВМ(в файле main.tf): "netology-develop-platform-db" , cores = 2, memory = 2, core_fraction = 20. Объявите ее переменные с префиксом vm_db_ в том же файле('vms_platform.tf').
 Примените изменения.
+    ![изображение](https://github.com/gambrilus/devops-netology/assets/100866321/4e4c57de-262e-4d2c-83b1-b7d715bead42)
+
 
 Задание 4
 
