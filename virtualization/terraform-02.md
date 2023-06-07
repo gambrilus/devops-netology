@@ -13,9 +13,9 @@
 В качестве решения приложите:
 
 скриншот ЛК Yandex Cloud с созданной ВМ,
-    ![изображение](https://github.com/gambrilus/devops-netology/assets/100866321/9bb7b36c-da42-478a-8bf0-41befb51dff6)
-скриншот успешного подключения к консоли ВМ через ssh
     
+скриншот успешного подключения к консоли ВМ через ssh
+    ![изображение](https://github.com/gambrilus/devops-netology/assets/100866321/9bb7b36c-da42-478a-8bf0-41befb51dff6)
    
 
 Задание 2
