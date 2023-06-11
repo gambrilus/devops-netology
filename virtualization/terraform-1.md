@@ -183,6 +183,9 @@ random_password.random_string: Destruction complete after 0s
 Destroy complete! Resources: 3 destroyed.
 ```
 
+Образ не удалился из-за параметра   keep_locally = true в файле main.tf
+keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
+
 
 Задание 2*
 Изучите в документации provider Virtualbox от shekeriev.
@@ -223,27 +226,4 @@ Changes to Outputs:
 
 ![изображение](https://github.com/gambrilus/devops-netology/assets/100866321/7d6339e1-a363-42f9-b56f-f778326a2df9)
 
-```docker images
-REPOSITORY                                    TAG       IMAGE ID       CREATED         SIZE
-nginx                                         latest    f9c14fe76d50   13 days ago     143MB
-elastic                                       centos7   5ea4ef804a51   2 weeks ago     2.06GB
-<none>                                        <none>    a1d18bf77cf1   2 weeks ago     2.06GB
-<none>                                        <none>    ef14e2295b0c   2 weeks ago     2.06GB
-gambrilus/netology                            elastic   629924dba38e   2 weeks ago     2.06GB
-postgres                                      13        c562f2f06bc5   4 weeks ago     374MB
-mysql                                         8         8189e588b0e8   7 weeks ago     564MB
-postgres                                      latest    ceccf204404e   8 weeks ago     379MB
-gambrilus/netology                            nginx     3e59d32936f2   4 months ago    40.7MB
-gambrilus/netology                            v1        3e59d32936f2   4 months ago    40.7MB
-nginx                                         v1        3e59d32936f2   4 months ago    40.7MB
-debian                                        latest    5c8936e57a38   4 months ago    124MB
-nginx                                         alpine    c433c51bbd66   4 months ago    40.7MB
-cr.yandex/crpqsclsco08cae1tjtm/ubuntu-nginx   latest    43e6929b8953   5 months ago    174MB
-ubuntu                                        latest    6b7dfa7e8fdb   6 months ago    77.8MB
-hello-world                                   latest    feb5d9fea6a5   20 months ago   13.3kB
-centos                                        7         eeb6ee3f44bd   20 months ago   204MB
-centos                                        latest    5d0da3dc9764   20 months ago   231MB
-pycontribs/centos                             7         bafa54e44377   2 years ago     488MB
-pycontribs/ubuntu                             latest    42a4e3b21923   3 years ago     664MB
-```
 
