@@ -25,17 +25,10 @@ variable "default_cidr" {
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
-variable "vpc_name" {
-  type        = string
-  default     = "develop"
-  description = "VPC network & subnet name"
-}
-
-
 ###ssh vars
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "iwmmX320TfNVZqrTX2X63Rjt0BnzLJOts1bdApAO4VU"
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC9+LfjcwR4DnvH0gyYKIjyynHUFjZSBbNt7PzKRlbW1 gambrilus@ubuntu"
   description = "ssh-keygen -t ed25519"
 }
