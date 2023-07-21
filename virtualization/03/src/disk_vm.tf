@@ -5,16 +5,6 @@ resource "yandex_compute_disk" "disk" {
   size       = 1
 }
 
-locals {
-  disk_number = toset([
-    "0",
-    "1",
-    "2"    
-  ])
-}
-
-
-
 
 resource "yandex_compute_instance" "storage" {
   count = 1
@@ -32,7 +22,7 @@ resource "yandex_compute_instance" "storage" {
       }   
     }
     dynamic "secondary_disk" {
-    for_each = local.disk_number
+    for_each = yandex_compute_disk.disk
     content {
         disk_id = yandex_compute_disk.disk[secondary_disk.key].id
       }
