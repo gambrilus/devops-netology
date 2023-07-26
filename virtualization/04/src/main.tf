@@ -13,7 +13,7 @@ module "test-vm" {
   env_name        = "develop"
   network_id      = module.vpc.network_id
   subnet_zones    = ["ru-central1-a"]
-  subnet_ids      = [ module.vpc.subnet_id ]
+  subnet_ids      = [ module.vpc.subnet_id[0] ]
   instance_name   = "web"
   instance_count  = 1
   image_family    = "ubuntu-2004-lts"
