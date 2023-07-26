@@ -1,15 +1,15 @@
-##Задание 1
+Задание 1
 
 ![04-ter](https://github.com/gambrilus/devops-netology/assets/100866321/8b26af8e-dc5f-4041-9e58-fdf388f86c54)
 
 
-##Задание 2
+Задание 2
 
 ![04-ter-02](https://github.com/gambrilus/devops-netology/assets/100866321/6d5098c4-6d11-4796-b12f-302f8dd80cb0)
 
-##Задание 3
+Задание 3
 
-###Список выполненных команд
+Список выполненных команд
 
     - terraform state list
     - terraform state rm 'module.vpc'
@@ -22,7 +22,7 @@
 
 ![04-ter-03-2](https://github.com/gambrilus/devops-netology/assets/100866321/15cf1397-94d9-430d-a111-4f3c32adc4f6)
 
-##Задание 4
+Задание 4
 
 Код в модуле обновлен для выполнения этого задания
 
