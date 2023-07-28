@@ -1,13 +1,33 @@
-Задание 1
+##Задание 1
+
+Возьмите из демонстрации к лекции готовый код для создания ВМ с помощью remote-модуля.
+
+Создайте одну ВМ, используя этот модуль. В файле [cloud-init.yml](https://github.com/gambrilus/devops-netology/blob/terraform-04/virtualization/04/src/cloud-init.yml) необходимо использовать переменную для ssh-ключа вместо хардкода. Передайте ssh-ключ в функцию template_file в блоке vars ={} . Воспользуйтесь примером. Обратите внимание, что ssh-authorized-keys принимает в себя список, а не строку.
+
+Добавьте в файл [cloud-init.yml](https://github.com/gambrilus/devops-netology/blob/terraform-04/virtualization/04/src/cloud-init.yml) установку nginx.
+
+Предоставьте скриншот подключения к консоли и вывод команды sudo nginx -t.
 
 ![04-ter](https://github.com/gambrilus/devops-netology/assets/100866321/8b26af8e-dc5f-4041-9e58-fdf388f86c54)
 
 
-Задание 2
+##Задание 2
+
+Напишите локальный модуль vpc, который будет создавать 2 ресурса: одну сеть и одну подсеть в зоне, объявленной при вызове модуля, например: ru-central1-a.
+
+Вы должны передать в модуль переменные с названием сети, zone и v4_cidr_blocks.
+
+Модуль должен возвращать в виде output информацию о yandex_vpc_subnet.
+
+Замените ресурсы yandex_vpc_network и yandex_vpc_subnet созданным модулем. Не забудьте передать необходимые параметры сети из модуля vpc в модуль с виртуальной машиной.
+
+Откройте terraform console и предоставьте скриншот содержимого модуля. Пример: > module.vpc_dev.
 
 ![04-ter-02](https://github.com/gambrilus/devops-netology/assets/100866321/6d5098c4-6d11-4796-b12f-302f8dd80cb0)
 
-Задание 3
+Сгенерируйте [документацию](https://github.com/gambrilus/devops-netology/blob/terraform-04/virtualization/04/src/vpc/README.md) к модулю с помощью terraform-docs.
+
+##Задание 3
 
 Список выполненных команд
 
@@ -17,14 +37,17 @@
     - terraform import 'module.vpc.yandex_vpc_network.develop' 'enpkoi6btmfme8jl6p82'
     - terraform import 'module.vpc.yandex_vpc_subnet.develop' 'e9bafaut4kej7bsigg5f'
     - terraform import 'module.test-vm.yandex_compute_instance.vm[0]' 'fhmga3rgjm7loq6tp1fh'
+
+Приложил список выполненных команд и скриншоты процесса.
     
 ![04-ter-03-1](https://github.com/gambrilus/devops-netology/assets/100866321/17458410-b56e-405d-b52e-434792ae8954)
 
 ![04-ter-03-2](https://github.com/gambrilus/devops-netology/assets/100866321/15cf1397-94d9-430d-a111-4f3c32adc4f6)
 
-Задание 4
+##Задание 4
 
 Код в модуле обновлен для выполнения этого задания
+
 
 ```
 terraform plan
